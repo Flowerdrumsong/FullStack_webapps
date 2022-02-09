@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var cnt=0;
+            function newStu(){
+                cnt++;
+                var stu={
+                    num:cnt, 
+                    kor:0, 
+                    setKor:function(a){this.kor=a;}, 
+                    getKor:function(){return this.kor;}    
+                    };
+                return stu;
+            }
+            var arr=[];
+            arr.push(newStu());
+            arr[0].setKor(90);
+            arr.push(newStu());
+            arr[1].setKor(80);
+            //...갯수제한 없이 계속 넣어줄 수 있겠지?
+
+            // var arr=[
+            //     {num:1, kor:0, setKor:function(a){this.kor=a;}, getKor:function(){return this.kor;}},
+            //     {num:2, kor:0, setKor:function(a){this.kor=a;}, getKor:function(){return this.kor;}},
+            //     {num:3, kor:0, setKor:function(a){this.kor=a;}, getKor:function(){return this.kor;}}
+            // ];
+
+            // arr[0].setKor(90);
+            // arr[1].setKor(80);
+            // arr[2].setKor(70);
+            for(var i=0; i<arr.length; i++){
+                var stu=arr[i];
+                console.log(stu.num, stu.getKor()); // 1 90 / 2 80 / 3 70
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

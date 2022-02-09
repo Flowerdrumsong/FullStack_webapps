@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var a=1111;
+            window.b=2222;
+            console.log(this.a, this.b); //1111 2222
+            function func01(){
+                console.log(this);
+            }
+            func01(); // window{window: Window, self:....
+            var c=function(){console.log(this);};// c(); // window{window: Window, self:....
+            var obj={'key1':'val1', 
+                    'func02':c,
+                    'func03':function(){console.log(this)},
+                    'func04':function(){return this.key1;},
+                    'func05':function(a){this.key1=a;}
+                };
+            obj.func02(); //{key1: 'val1', func02: ƒ, func03: ƒ} (object)
+            obj.func03(); //{key1: 'val1', func02: ƒ, func03: ƒ}
+            // 객체 안에서의 this는.. 자기 자신 = 객체
+
+            obj.func05('value');
+            var d=obj.func04();
+            console.log("d="+d); //d=value
+                
+            //func04 : getter, func05: setter
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

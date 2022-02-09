@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            *{
+                margin: 0px;
+            }
+            @media screen and (max-width:767px){
+                #menu{
+                    background-color: seagreen;
+                    width: 100%;
+                    height: 50px;
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                }
+                #menu>div{
+                    margin: 12px;
+                    /* border: 1px solid black; */
+                    border-radius: 5px;
+                    width: 30px;
+                    height: 40px;
+                }
+                #menu>div>span{
+                    border: 2px solid black;
+                    display: block;
+                    margin: 6px 0px;
+                }
+                ul {
+                    position: absolute;
+                    top:50px;
+                    list-style: none;
+                    padding: 0px;
+                    width: 100%;
+                    display: none;
+                }
+                ul li {
+                    width: 100%;
+                    height: 50px;
+                    background-color: lightseagreen;
+                    text-align: center;
+                    line-height: 50px;
+                    color: lightcyan;
+                }
+            }
+
+
+
+
+            @media screen and (min-width:992px){
+                ul{
+                    list-style: none;
+                    padding: 0px;
+                }
+                ul>li{
+                    width: 100px;
+                    height: 50px;
+                    background-color: lightseagreen;
+                    float: left;
+                }
+                #menu{
+                    background-color: seagreen;
+                    width: 100%;
+                    height: 50px;
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                }
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li>MENU1</li>
+                <li>MENU2</li>
+                <li>MENU3</li>
+                <li>MENU4</li>
+                <li>MENU5</li>
+                <li>MENU6</li>
+            </ul>
+        </div>
+    </body>
+</html>

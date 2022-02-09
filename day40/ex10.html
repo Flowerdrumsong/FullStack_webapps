@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            .container{
+                width: 1200px;
+            }
+            .containerw .grid1, 
+            .containerw .grid2, 
+            .containerw .grid3,
+            .containerw .grid4,
+            .containerw .grid5,
+            .containerw .grid6,
+            .containerw .grid7,
+            .containerw .grid8,
+            .containerw .grid9,
+            .containerw .grid10,
+            .containerw .grid11,
+            .containerw .grid12{
+                float: left;
+                background-color: lightgrey;
+            }
+            .containerw .grid1{width: 8.33%;}
+            .containerw .grid2{width: 16.66%;}
+            .containerw .grid3{width: 25%;}
+            .containerw .grid4{width: 33.33%;}
+            .containerw .grid5{width: 41.66%;}
+            .containerw .grid6{width: 50%;}
+            .containerw .grid7{width: 58.33%;}
+            .containerw .grid8{width: 66.66%;}
+            .containerw .grid9{width: 75%;}
+            .containerw .grid10{width: 83.33%;}
+            .containerw .grid11{width: 91.66%;}
+            .containerw .grid12{width: 100%;}
+            .containerw .row{
+                clear:both;
+            }
+
+            @media screen and (max-width:799px){
+                .containerw .mgrid1{width: 8.33%;}
+                .containerw .mgrid2{width: 16.66%;}
+                .containerw .mgrid3{width: 25%;}
+                .containerw .mgrid4{width: 33.33%;}
+                .containerw .mgrid5{width: 41.66%;}
+                .containerw .mgrid6{width: 50%;}
+                .containerw .mgrid7{width: 58.33%;}
+                .containerw .mgrid8{width: 66.66%;}
+                .containerw .mgrid9{width: 75%;}
+                .containerw .mgrid10{width: 83.33%;}
+                .containerw .mgrid11{width: 91.66%;}
+                .containerw .mgrid12{width: 100%;}
+                .containerw .mclear{
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="containerw">
+            <div class="row">
+                <div class="mgrid3 grid1">CELL1</div>
+                <div class="mgrid9 grid11">CELL11</div>
+            <!-- <div class="row"></div> -->
+            </div>
+            <div class="row">
+                <div class="mgrid3 grid2">CELL2</div>
+                <div class="mgrid9 grid10">CELL10</div>
+            </div>
+            <div class="row">
+                <div class="mgrid6 grid3">CELL3</div>
+                <div class="mgrid6 grid9">CELL9</div>
+            </div>
+            <div class="row">
+                <div class="mgrid9 grid4">CELL4</div>
+                <div class="mgrid3 grid8">CELL8</div>
+            </div>
+            <div class="row">
+                <div class="mgrid9 grid5">CELL5</div>
+                <div class="mgrid3 grid7">CELL7</div>
+            </div>
+            <div class="row">
+                <div class="mgrid12 grid6">CELL6</div>
+                <div class="mgrid12 mclear">CELL6</div>
+            </div>
+        </div>
+    </body>
+</html>

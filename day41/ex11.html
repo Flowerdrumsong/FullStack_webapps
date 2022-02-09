@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            //object
+            //property (자바의 멤버필드)
+            //.으로 접근
+            var a=new Object();
+
+            console.log(typeof a); //obejct
+            console.log(a.prop1); //undefined 
+            a.prop1='p1';
+            console.log(a.prop1); //p1
+            console.log(a); //{prop1: 'p1'}prop1: "p1"[[Prototype]]: Object
+
+            var obj2={"key1":"val1", "key2":"val2"};
+            // map 타입과 유사하다
+            console.log(obj2.key1); //val1
+            console.log(obj2.key2); //val2
+            console.log(obj2.key3); //undefined
+            console.log(obj2); //{key1: 'val1', key2: 'val2'}
+
+            var c={1.1:'val1', 'key2':1234, 'key3':3.14, null:true};
+            console.log(typeof c); //object
+            console.log(c); //{1.1: 'val1', key2: 1234, key3: 3.14, null: true}
+            c.key3=4.14;
+            console.log(c); //{..., key3: 4.14, ...}
+            c.null=false;
+            console.log(c); //{..., null: false}
+            c[1.1]='val1.1';
+            console.log(c); //{1.1: 'val1.1', ...}
+            c['hey']=1; // 추가도 됨(오브젝트의 특성)
+            console.log(c); //{..., hey: 1} 
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

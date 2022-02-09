@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            //날짜 보고싶을 때
+            var date=new Date();
+            console.log(date);
+            //Wed Feb 09 2022 17:08:16 GMT+0900 (한국 표준시)
+
+            function Func01(a){this.key1=a;}
+            var obj2=new Func01(); //new 연산자로 객체가 생성되면, this는 window가 아니라 new 연산자로 만들어진 객체
+            obj2.key1='val1';
+            var obj3=new Func01('val2');
+            console.log(typeof obj2, obj2, obj3);  // object Func01 {key1: 'val1'} Func01 {key1: 'val2'}
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

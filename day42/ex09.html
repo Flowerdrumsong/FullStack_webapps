@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var arr1=[2,6,8,4];
+            arr1.push(9); // 맨 뒤에 넣기
+            console.log(arr1); //(5) [2, 6, 8, 4, 9]
+            arr1.pop(); // 맨 뒤에서 빼기
+            console.log(arr1); //(4) [2, 6, 8, 4]
+            //stack
+            arr1.shift(); //맨 앞에서 빼기
+            console.log(arr1); //(3) [6, 8, 4]
+            // queue
+
+            // 메서드를 이용하면, 
+            // 자연스럽게 자료구조를 구현할 수 있고
+            // 인덱스로 잘 못 접근할 때 발생할 수 있는 문제점도 함께 해결
+
+            console.log(arr1.toString()); //6,8,4
+            arr1.sort();
+            console.log(arr1.toString()); //4,6,8
+            //문자열도 가능
+
+            var callback=function(a,b){
+                return b-a;
+            }; // 양수인지 음수인지 (올림차순, 내림차순에서 활용하기 위해)
+
+            arr1.sort(callback);
+            console.log(arr1.toString()); //8,6,4
+
+            var myArr=Array.from("ABCDEF");
+            console.log(typeof myArr, myArr);
+            //object (6) ['A', 'B', 'C', 'D', 'E', 'F']
+        </script>
+    </head>
+</html>

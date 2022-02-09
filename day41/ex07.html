@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // Number TYPE
+            // 선언방식에 따라 다르게 인식해야 함
+            var a=1111; //number 타입
+            var b=new Number(); //object 타입
+            // number 타입은 객체라고 하면 안됨.
+            // 실질적으로 맞지만.. 개념이 다름
+            // js는 기본 자료형이 없지만, 전산적으로는? 자료형을 가지고 처리 (C++ 60, 어셈블리 40)
+            // 그래서 js의 숫자 자료형은 number 타입
+            // 정수와 실수를 구분하지 않음
+            console.log(a); //1111
+            console.log(typeof a); //number
+            console.log(b); //Number {0}[[Prototype]]: Number[[PrimitiveValue]]: 0
+            console.log(typeof b); //object (number라는 object 타입)
+            console.log(a==b); //true 값이 같음
+            console.log(a===b); //false
+
+            var c=new Number(3.14);
+            var d=new Number(3.14);
+            console.log(c==d); // false 객체
+            console.log(c===d); // false 
+
+            var e=d;
+            console.log(e==d); //true
+            console.log(e===d); // true
+
+            var e='200';
+            console.log(parseInt(e)*3); //600 오..
+            // $200 안 됨 / 200$됨 / 2,000원 6으로 계산
+            // 숫자로 시작하여, 숫자가 아닌 것이 나올 때 까지
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

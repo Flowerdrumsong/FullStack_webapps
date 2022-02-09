@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var arr1=new Array();
+            var arr2=[];
+            arr2[0]=111;
+            arr2[1]=222;
+            arr2[2]=333;
+            arr2[3]=444;
+            console.log(arr2.length, arr2);  //4 (4) [111, 222, 333, 444]
+            console.log(typeof arr2, arr2.length, arr2); // object 4 (4) [111, 222, 333, 444]
+            console.log('-----------------');
+            for(var i=0; i<arr2.length; i++) console.log(arr2[i]);
+            // 111 222 333 444
+            for (var obj in arr2) console.log(arr2[obj])
+            // 111 222 333 444
+            for (var obj in arr2) console.log(obj)
+            // 0 1 2 3              
+            for (var obj of arr2) console.log(obj);
+            // 111 222 333 444 iterator
+            
+            console.log('----------');
+            arr2.forEach((val, idx)=>{console.log(val, idx);});
+            // 111 0 / 222 1 / 333 2 / 444 3
+            // 웹에서는 이렇게 쓰지마
+            arr2.forEach(function(val, idx){
+                console.log(idx, val);
+            });
+            // 0 111 / 1 222 / 2 333 / 3 444
+            // 알아서 콜백 수행
+
+            var callback=function(val, idx){
+                console.log(idx, val);
+            };
+            arr2.forEach(callback); //콜백함수
+            console.log('----------');
+            while(arr2.length){
+                console.log(arr2.pop()); // 444 333 222 111
+            }
+            // 그리고 arr2는 비었음
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
