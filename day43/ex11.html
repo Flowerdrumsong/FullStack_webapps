@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            body>div{
+                margin: 0 auto;
+                width: 600px;
+                text-align: center;
+            }
+            body>div:nth-child(2),
+            body>div:nth-child(4){
+                background-color: gray;
+            }
+            body>div:nth-child(2)>a{
+                display: inline-block;
+                width:100px;
+                height:50px;
+                background-color: darkgray;
+                color:white;
+                line-height: 50px;
+                text-decoration: none;
+            }
+            .ban{
+                width: 600px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>하이미디어</h1>
+        </div>
+        <div>
+            <a href="#">menu1</a>
+            <a href="#">menu2</a>
+            <a href="#">menu3</a>
+            <a href="#">menu4</a>
+        </div>
+        <div>
+            <div>img rolling</div>
+        </div>
+        <div>
+            footer
+        </div>
+        <script type="text/javascript">
+            var cnt=1;
+            var div=document.querySelector('body>div:nth-child(3)>div');
+            div.innerHTML='<img class="ban" src="imgs/small0'+cnt+'.jpg"/>';
+            function rolling(){
+                cnt++;
+                if(cnt>6){
+                    cnt=1;
+                }
+                div.innerHTML='<img class="ban" src="imgs/small0'+cnt+'.jpg"/>';
+            }
+            // setInterval(rolling, 1000);
+        </script>
+    </body>
+</html>

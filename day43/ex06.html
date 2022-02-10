@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            
+            var callback=function (){
+                document.write("<h1>환영</h1>")
+            };
+            setInterval(callback,1000);//원래있던 메시지는 없어지고 환영만 찍힘
+            //IO를 통해서 쓰고 있다는 관점에서 봤을 때
+            //js, html, css엔진이 원칙적으로 다른 것인데
+            //css는 나중에 시행되니까 차치하고
+            //html과 javascript는 화면에 보여주는 동일한 IO작업임
+            //각각 io작업을 하고 끊고 하고 있으므로
+            //그래서 덮어쓰게 되는 것
+            //번잡스러우니까 하나로만 하자!
+            //html을 해놓고 js가 이들을 제어하게..
+            //하려니까 우선 script태그를 하단에 둬야겠고
+            //html에 접근을 할 수 있어야겠지? <-dom제어 / 노드제어
+        </script>
+    </head>
+    <body>
+        <h1>메시지</h1>
+
+    </body>
+</html>
