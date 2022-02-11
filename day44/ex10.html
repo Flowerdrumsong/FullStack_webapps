@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: tomato;
+            }
+        </style>
+        <script type="text/javascript">
+            var div;
+            var callback1=function(){
+                div.innerHTML+='clickk.<br />';
+            };
+            var callback2=function(){
+                div.innerHTML+='overr-<br />';
+            };
+            var callback3=function(){
+                div.innerHTML+='outt!<br />';
+            };
+            window.onload=function(){
+                div=document.querySelector('div');
+                div.onclick=callback1;
+                div.addEventListener('click', callback1);
+                div.addEventListener('mouseover', callback2);
+                div.addEventListener('mouseout', callback3);
+            };
+        </script>
+    </head>
+    <body>
+        <h1>mouse event</h1>
+        <div></div>
+        <p>
+            레벨2와 레벨3의 차이
+            돔 레벨2
+            객체의 키로 밸류값을 주는 것인데
+            div.onclick=callback1;
+            div.onclick=callback2;
+            이렇게 되면 덮어쓰는 것: 한개만 작동함
+            돔 레벨3
+            div.addEventListener('click', callback1);
+            div.addEventListener('click', callback2);
+            쓰는대로 붙음
+            이벤트를 붙일 수 있다는 것은, 이벤트를 뺄 수도 있다는 것
+            div.removeEventListener('click', callback2);
+            //지울때도 인자는 2개(이벤트, 해당이벤트의 콜백)
+            
+            +콜백에 익명함수를 쓴다?
+             ex) div.addEventListener('mouseout', function(){
+                 dffdkjlasjf~;
+             });
+             레벨3의 장점을 살리지 못하는 것
+
+             주의사항
+             *돔레벨3에서 특히 주의 할 것
+             1. 
+        </p>
+    </body>
+</html>

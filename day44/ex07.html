@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var form, input, ch1, ch2, ch3, select, btn, alink, div;
+            window.onload=function(){
+                select=document.querySelector('select');
+                input=document.querySelector('input[type="text"]');
+                form=document.querySelector('form');
+                btn=document.querySelector('button');
+                alink=document.querySelector('div>a');
+                div=document.querySelector('#result');
+                ch1=document.querySelectorAll('input[type="checkbox"]')[0];
+                
+                input.onchange=function(){
+                    console.log(this, this.value);
+                    div.innerText=this.value;
+                }
+                btn.onclick=function(){
+                    return false;
+                }
+                alink.onclick=function(){
+                    this.href='https://google.com';
+                    // console.log(this); //엘리먼트 자기 자신
+                    // 자기 자신의 href를 구글로 바꾸니까, 구글로 감.
+                    // html의 속성은 의미가 없다..
+                    // return false;
+                };
+                select.onchange=function(){
+                    console.log(this, this.value); // 자기 자신=select, 선택된 value
+                };
+                form.onsubmit=function(){
+                    //console.log('btn click');
+                    if(input.value==''); return false; //값이 없으면 페이지 이동 안 함
+                    return true; //false: form태그가 작동 안함
+                };
+
+            };
+        </script>
+    </head>
+    <body>
+        <h1>etc event</h1>
+        <form> 
+        <!-- form태그의 이벤트 onsubmit -->
+        <!-- console에서 이벤트를 따로 호출할 때는 form.submit(); <-'on'이 빠진 형태로 사용 -->
+            <div>id<input type="text" name="id"></div>
+            <div>
+                <input type="checkbox" name="ch1" />item1
+                <input type="checkbox" name="ch2" />item2
+                <input type="checkbox" name="ch3" />item3
+            </div>
+            <div>
+                <select name="" id="">
+                    <option value="item1">item1</option>
+                    <option value="item2">item2</option>
+                    <option value="item3">item3</option>
+                </select>
+                
+            </div>
+            <button type="submit">전송</button>
+        </form>
+        <div id="result">link:<a href="https://m.naver.com">link</a></div>
+        <!-- a태그 못가게 막기: onclick retrun false -->
+        <!-- 기본동작을 하지 못하게 막는 것 -->
+    </body>
+</html>

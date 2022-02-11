@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var loading=function(){
+                console.log('loading..')
+            };
+
+            window.onload=loading;
+            //레벨2를 쓰는 이유:
+            //레벨3에서는 여러개가 작동하기 때문에..
+            //onload 메서드의 목적에 따라,
+            //onload에 한해서는 레벨2를 씀
+            window.addEventListener('load', loading);
+            //'load'=event 종류 (on을 빼고)
+            //loading=callback
+            //다른 이벤트는 돔레벨3를 쓰는게 나음
+
+        </script>
+    </head>
+    <body>
+        <h1>DOM Level 3 event</h1>
+    </body>
+</html>

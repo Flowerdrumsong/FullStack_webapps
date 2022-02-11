@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var a;
+            window.onload=function(){
+                a=docnment=queryselector('a');
+                //돔레벨 3에서는 실수ㅏ 안됨
+                // a.onclick=function(e){
+                //     e.preventDefault(); //엘리먼트 기본 기능 취소
+                //     console.log('앵커취소');
+                //     return false;
+                // }
+                // a.addEvenries
+            
+                a.addEventLostener('click', function(etc){
+                    e.preventDefault();
+                    console.log(this);
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Dom Level 3 event 주의사항</h1>
+        <a href="https://m.naver.com"></a>
+    </body>
+</html>
+
+<!-- 처음부터 다 붙여넣기 해ㅔ야 함 -->
+<!-- 레벨2가 들어가는 경우가 있음 -->

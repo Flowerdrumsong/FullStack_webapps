@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var h1, input, btn, div;
+            window.onload=function(){
+                input=document.querySelector('input');
+                btn=document.querySelector('button');
+                div=document.querySelector('#result');
+                input.onkeydown=function(e){
+                    console.log('key down', input.value, e.keyCode, e.charCode, e.key);
+                };
+                input.onkeyup=function(e){
+                    console.log('key up', input.value, e.keyCode, e.charCode, e.key);
+                };
+                input.onkeypress=function(e){
+                    console.log('key press', input.value, e.keyCode, e.charCode, e.key);
+                }; //실제로 값이 전달되는 단계 (값이 없으면 작동x shift, ctrl, 방향키)
+                //ex 대문자 A > key down2 > key press > key up2
+                //input.value를 보면, 누를 당시에 가지고 있는 값
+                //파라미터e를 받고, 확인해보기
+
+                //onkeydown/onkeypress : 키보드의 퍼포먼스
+                //onkeypree : 전달되는 값
+            }
+        </script>
+    </head>
+    <body>
+        <h1>key event</h1>
+        <input type="text" />
+        <button>btn</button>
+        <div id="result"></div>
+    </body>
+</html>

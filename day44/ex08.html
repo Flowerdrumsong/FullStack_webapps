@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            .container{
+                width: 800px;
+                margin: 0 auto;
+            }
+            #header h1{
+                background-image: url('imgs/logo.jpg');
+                background-repeat: no-repeat;
+                height:100px;
+                text-indent: -9999px;
+            }
+            #menu, #footer{
+                background-color: turquoise;
+            }
+            .banner{
+                width: 600px;
+                height: 200px;
+                overflow: hidden;
+                margin: 0 auto;
+                position: relative;
+            }
+            .banner img {
+                width: 200px;
+            }
+            .banner>ul{
+                list-style: none;
+                padding:0px;
+                width: 1200px;
+            }
+            .banner>ul>li{
+                float: left;
+            }
+            .banner>a{
+                position: absolute;
+                top: 85px;
+                left: 0px;
+                display: inline-block;
+                width:50px;
+                height:50px;
+                background-color: black;
+                border-radius: 25px;
+                line-height: 40px;
+                text-align: center;
+                color: #fff;
+                text-decoration: none;
+                font-size: 40px;
+                font-weight: 700;
+                opacity: .5;
+            }
+            .banner>a:last-child{
+                left: 550px;
+            }
+            #menu>div{
+                /* overflow: hidden; */
+                height: 50px; 
+                /* submenu들 안 보이게 하기 */
+            }
+            #menu ul{
+                position: relative;
+                list-style: none;
+                padding: 0px;
+                width: 400px;
+                margin: 0 auto;
+            }
+            #menu ul>li{
+                float: left;
+            }
+            #menu ul>li>a {
+                display: block;
+                width: 100px;
+                height: 50px;
+                background-color: antiquewhite;
+                text-align: center;
+                color: brown;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 700;
+                line-height: 50px;
+            }
+            #menu ul>li>ol{
+                position: absolute;
+                list-style: none;
+                padding: 0px;
+                z-index: 100;
+                overflow: hidden;
+                height: 0px;
+            }
+            #menu ul>li>ol>li>a{
+                display: block;
+                width: 100px;
+                height: 50px;
+                background-color: antiquewhite;
+                text-align: center;
+                color: brown;
+                text-decoration: none;
+                text-transform: uppercase;
+                line-height: 50px;
+                font-size: 14px;
+            }
+        </style>
+        <script type="text/javascript">
+            var banner, imgs, aprev, anext, ul, menu2, menu3;
+            window.onload=function(){
+                
+                banner=document.querySelector('.banner');
+                imgs=document.querySelectorAll('.banner img');
+                //ul=banner.querySelector('ul');
+                banner.innerHTML+='<a href="#">&lt;</a><a href="#">&gt;</a>'; 
+                //↑ ul의 자식에 새로운 요소를 추가했음
+                //자기자신+자식요소가 바뀌는 메서드, 자식요소만 바뀌는 메서드가 있음
+                //이 코드 위에서 ul을 잡는 것은 소용이 없음
+                menu2=document.querySelectorAll('#menu ul>li')[1];
+                menu3=document.querySelectorAll('#menu ul>li')[2];
+                menu2.querySelector('ol').style.height='0px';
+                var menuOver=function(){
+                    this.querySelector('ol').style.height='200px';
+                }
+                var menuOut=function(){
+                    this.querySelector('ol').style.height='0px';
+                }
+                menu2.onmouseover=menuOver;
+                menu3.onmouseover=menuOver;
+                menu2.onmouseout=menuOut;
+                menu3.onmouseout=menuOut;
+
+                // function에서 this는 함수 자기 자신이었으므로..
+                // menu2.onmouseover=function(){
+                //     this.querySelector('ol').style.height='200px';
+                // }
+                // menu2.onmouseout=function(){
+                //     this.querySelector('ol').style.height='0px';
+                // }
+
+                
+                ul=banner.querySelector('ul');
+                
+                aprev=document.querySelectorAll('.banner>a')[0];
+                anext=document.querySelectorAll('.banner>a')[1];
+                aprev.onclick=function(){
+                    ul.prepend(ul.lastElementChild);
+                    return false;
+                };
+                anext.onclick=function(){
+                    ul.appendChild(ul.firstElementChild); //가장 뒤로 붙음
+                    return false;
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="header" class="row">
+                <div class="grid12">
+                    <h1>하이미디어</h1>
+                </div>
+            </div>
+            <div id="menu" class="row">
+                <div class="grid12">
+                    <ul>
+                        <li><a href="#">item1</a></li>
+                        <li><a href="#">item2</a>
+                            <ol>
+                                <li><a href="#">item2-1</a></li>
+                                <li><a href="#">item2-2</a></li>
+                                <li><a href="#">item2-3</a></li>
+                                <li><a href="#">item2-4</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#">item3</a>
+                            <ol>
+                                <li><a href="#">item3-1</a></li>
+                                <li><a href="#">item3-2</a></li>
+                                <li><a href="#">item3-3</a></li>
+                                <li><a href="#">item3-4</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#">item4</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content" class="row">
+                <div class="grid12">
+                    <div class="banner">
+                        <ul>
+                            <li><img src="imgs/big01.jpg"></li>
+                            <li><img src="imgs/big02.jpg"></li>
+                            <li><img src="imgs/big03.jpg"></li>
+                            <li><img src="imgs/big04.jpg"></li>
+                            <li><img src="imgs/big05.jpg"></li>
+                            <li><img src="imgs/big06.jpg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="row">
+                <div class="grid12">
+                    <address>
+                        <p>
+                            (주) 하이미디어 아카데미	
+                            copyright &copy;Himedia Academy, All Rights Reserved.
+                        </p>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
