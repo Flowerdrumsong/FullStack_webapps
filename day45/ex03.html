@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- ajax 통신으로 불러오기 -->
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var div, xhr;
+            window.onload=function(){
+                div=document.querySelector('div');
+                xhr=new XMLHttpRequest(); 
+                xhr.onreadystatechange=function(){
+                    div.innerHTML=xhr.responseText;
+                };
+                xhr.open('get', 'ex01.html');
+                xhr.send();
+            };
+            // 객체생성 > open 통신방식, url > send > 통신이 일어남
+            // 통신이 일어나면 받아야 겠죠? onreadystatechange 통신의 상태변화 (콜백)
+        </script>
+    </head>
+    <body>
+        <h1>page ex03</h1>
+        <div></div>
+    </body>
+</html>
